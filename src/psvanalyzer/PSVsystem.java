@@ -2,13 +2,14 @@ package psvanalyzer;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PSVsystem implements Serializable
 {
 	String name;
 	ArrayList<PSV> protectingPSVs;
 	ArrayList<Equipment> protectedEquipment;
-	ArrayList<OPsources>  credableScenarios;
+	ArrayList<OPsources>  relevantEquipment;
 	
 	boolean liquidFull;
 	boolean vaporFull;
@@ -17,11 +18,11 @@ public class PSVsystem implements Serializable
 	boolean hasHeatInput;
 	boolean hasCooling;
 	
-	public PSVsystem()
+	public PSVsystem(Scanner k)
 	{
 		protectingPSVs=new ArrayList<PSV>();
 		protectedEquipment=new ArrayList<Equipment>();
-		credableScenarios=new ArrayList<OPsources>();
+		relevantEquipment=new ArrayList<OPsources>();
 		
 		liquidFull=false;
 		vaporFull=false;
@@ -29,6 +30,23 @@ public class PSVsystem implements Serializable
 		hasOutletsWithDifferentPhases=false;
 		hasHeatInput=false;
 		hasCooling=false;
+		
+		this.setValues(k);
+	}
+	public void setValues(Scanner k)
+	{
+		try
+		{
+			System.out.println("What is the PSV tag");
+		}
+		catch(Exception e)
+		{
+			System.out.println();
+		}
+	}
+	public void printAnalysis()
+	{
+		return;//todo
 	}
 	
 }

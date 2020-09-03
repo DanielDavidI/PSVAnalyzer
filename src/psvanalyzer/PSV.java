@@ -1,5 +1,7 @@
 package psvanalyzer;
 
+import java.util.Scanner;
+
 public class PSV 
 {
 	String name;
@@ -13,9 +15,12 @@ public class PSV
 	double setPressure;//psig
 	double CDTP;//psig
 	
+	public PSV()//only used to generate dummy object to get path
+	{
+		return;
+	}
 	
-	
-	public PSV()
+	public PSV(Scanner k)
 	{
 		name="";
 		model="";
@@ -27,7 +32,15 @@ public class PSV
 		Kd=0;
 		setPressure=0;
 		CDTP=0;
-		return;//do not use this constructor normally. This is used for the object needed to get the file path
+		this.setValues(k);
+	}
+	public void setValues(Scanner k)
+	{
+		return;
+	}
+	public String toString()
+	{
+		return "Tag: "+name+" Model number: "+model+" Manufacturer: "+manufacturer+" Type: "+type+" relief location: "+reliefLocation+" orifice letter: "+OrificeLetter+" orifice area (in²) "+OrificeArea+" Kd: "+Kd+" set pressure (psig): "+setPressure+" CDTP (psig): "+CDTP;
 	}
 
 }
