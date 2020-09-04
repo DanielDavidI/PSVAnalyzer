@@ -1,10 +1,12 @@
 package psvanalyzer;
 
+import java.io.Serializable;
+
 //This class represents equipment being protected by PSV(s)
 
 import java.util.Scanner;
 
-public class Equipment
+public class Equipment implements Serializable
 {
 	String tag;//equipment nametag
 	int type;//vessel,tower,Heat exchanger shell,heat exchanger tubes (low pressure tanks are not in scope)

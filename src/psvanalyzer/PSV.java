@@ -1,8 +1,9 @@
 package psvanalyzer;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class PSV 
+public class PSV implements Serializable
 {
 	String name;
 	String model;

@@ -1,11 +1,12 @@
 package psvanalyzer;
+import java.io.Serializable;
 /*This class is used to represent sources of pressure for the system as well as other equipment that interacts with the system
 
 */
 import java.util.Scanner;
 
 
-public class OPsources 
+public class OPsources implements Serializable
 {
 	String tag;//designation of equipment or utility 
 	String Description;
