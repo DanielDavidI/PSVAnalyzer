@@ -36,6 +36,36 @@ public class PSV
 	}
 	public void setValues(Scanner k)
 	{
+		System.out.println("What is the tag for this PSV?");
+		name=k.next();
+		
+		System.out.println("What is the model for this PSV?");
+		model=k.next();
+		
+		System.out.println("What is the manufacturer for this PSV?");
+		manufacturer=k.next();
+		
+		System.out.println("What is the tpye (conventional/bellows/pilot) for this PSV?");
+		type=k.next();
+		
+		System.out.println("What is the relief desination (atmosphere/flare/sewer) for this PSV?");
+		reliefLocation=k.next();
+		
+		System.out.println("What is the API orifice letter (use X if a standard API orifice is not used) for this PSV?");
+		OrificeLetter=k.next();
+		
+		System.out.println("What is the orifice area (in²) for this PSV?");
+		OrificeArea=k.next();
+		
+		System.out.println("What is the Kd for this PSV?");
+		Kd=k.nextDouble();
+		
+		System.out.println("What is the set pressure (psig) for this PSV?");
+		setPressure=k.nextDouble();
+		
+		System.out.println("What is the CDTP (psig) for this PSV?");
+		CDTP=k.nextDouble();
+		
 		return;
 	}
 	public String toString()

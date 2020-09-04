@@ -29,7 +29,20 @@ public class Equipment
 	}
 	public void setValues(Scanner k)
 	{
-		return;//todo
+		System.out.println("What is the equipment tag?");
+		tag=k.next();
+		
+		System.out.println("What type of protected equipment is this? (0=drum,1=tower,2=Heat Exchanger Shell,3=Heat Exchanger Tube)");
+		type=k.nextInt();
+		
+		System.out.println("What is the maximum allowable working pressure (MAWP) in psig?");
+		MAWP=k.nextDouble();
+		
+		System.out.println("What is the maximum allowable working temperature (MAWT) in °F");
+		MAWT=k.nextDouble();
+		
+		
+		return;
 	}
 	public String toString()
 	{

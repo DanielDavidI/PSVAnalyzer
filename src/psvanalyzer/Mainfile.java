@@ -108,7 +108,7 @@ public class Mainfile
 						System.out.println("Has Cooling? "+chosenSystem.hasCooling);
 						System.out.println("Has Heating? "+chosenSystem.hasHeatInput);
 						System.out.println("Is a distillation tower "+chosenSystem.IsDistillationTower);
-						System.out.println("Has separate liquid and Vapor Outlets "+chosenSystem.name);
+						System.out.println("Has separate liquid and Vapor Outlets "+chosenSystem.hasOutletsWithDifferentPhases);
 						
 						System.out.println();
 						
@@ -131,7 +131,7 @@ public class Mainfile
 							System.out.println(o);
 						}
 						
-						System.out.println("\n\n\n");
+						System.out.println("\n\n");
 						
 						System.out.println("what would you like to do?");
 						System.out.println("1. main menu");
@@ -165,7 +165,7 @@ public class Mainfile
 						}
 						else if(choice==3)
 						{
-							chosenSystem.protectingPSVs.add(new PSV());
+							chosenSystem.protectingPSVs.add(new PSV(keyboard));
 						}
 						else if(choice==4)
 						{
@@ -277,7 +277,24 @@ public class Mainfile
 			}
 			if(choice==5)
 			{
-				//todo
+					try
+					{
+						File PSVwriter = new File(path+"data.dat");
+						PSVwriter.delete();
+						PSVwriter=new File(path+"data.dat");
+						FileOutputStream toFile=new FileOutputStream(PSVwriter);
+						ObjectOutputStream ObjectSaver=new ObjectOutputStream(toFile);
+						
+						for(PSVsystem s: systems)
+						{
+							ObjectSaver.writeObject(s);;
+						}
+						ObjectSaver.close();
+					}
+					catch(Exception e)
+					{
+						
+					}
 			}
 			if(choice==6)
 			{
