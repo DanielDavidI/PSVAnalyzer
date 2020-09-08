@@ -54,7 +54,7 @@ public class OPsources implements Serializable
 		System.out.println("Please describe the relationship with the protected system(feed=0,outlet=1,heat input=2, cooling=3, reflux=4, boilup=5)");
 		position=k.nextInt();
 		
-		System.out.println("What is the maximum pressure (psig) considered for this source. If this is a valve failure or opening scenario, you may consider the normal upstream pressure");
+		System.out.println("What is the maximum pressure (psig) considered for this source. If this is a valve failure or opening scenario, you may consider the normal upstream pressure. If the equipment is downstream and reverse flow is not expected, enter a 0 for pressure.");
 		pressure=k.nextDouble();
 		
 		System.out.println("What is the flow rate for this case? This can be based on ratings from rotating equipment, choked flow through control/bypass valves, or the known rate of flow");
@@ -93,33 +93,6 @@ public class OPsources implements Serializable
 	}
 	public String toString()
 	{
-		return "tag: "+tag+"  "+Description+"  "+position+"  "+pressure+"  "+flowRate+"  "+powerDependent+"  "+instrumentAirDependent+""+failPosition+"  "+reverseFlow;
+		return "tag: "+tag+"  "+Description+"  "+position+"  "+pressure+"  "+flowRate+"  "+powerDependent+"  "+instrumentAirDependent+" "+failPosition+"  "+reverseFlow;
 	}
 }
-
-
-
-
-
-/*public class Equipment 
-{
-	String tag;//what is the designated 
-	String Category;//is this a pump, compressor, blower, control valve, bypass valve?
-	boolean usesPower;//will this be effected by power failure?
-	boolean instrumentAirUser;//Is this equipment effected by the instrument air header?
-	String failPosition;//Only applicable if instrumentAirUser is true.
-	String Position;//What position does the equipment occupy compared to the system. (see static variables)
-	
-	
-	
-	public Equipment()
-	{
-		tag="";
-		Category="";
-		usesPower=false;
-		instrumentAirUser=false;
-		failPosition="";
-		Position="";
-	}
-	
-}*/
